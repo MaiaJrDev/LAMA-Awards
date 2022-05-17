@@ -1,0 +1,64 @@
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+    "name": "Roberto",
+    "email": "roberto@gmail.com",
+    "password": "roberto123",
+    "role": "ADMIN" 
+}
+
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "vitin@gmail.com",
+    "password": "vitin123"    
+}
+
+###
+
+POST http://localhost:3000/band/create
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OTNlOTY1LTBjNGItNGYxZS04ZDE3LTg1NjQ3NTA1OTU3YyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ2OTg3NSwiZXhwIjoxNjUyNDg3ODc1fQ.AdN1O4ZABdFM8oVjh8L-t72vU6oQ5bk1nraxbFYRMKo
+
+{
+    "name": "vitin e seus teclados", 
+    "musicGenre": "forro", 
+    "lider": "vitin"
+}
+
+###
+
+GET http://localhost:3000/band/3d0d85b6-16f8-4965-bb4c-68b13bc40773
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OTNlOTY1LTBjNGItNGYxZS04ZDE3LTg1NjQ3NTA1OTU3YyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ2OTg3NSwiZXhwIjoxNjUyNDg3ODc1fQ.AdN1O4ZABdFM8oVjh8L-t72vU6oQ5bk1nraxbFYRMKo
+
+
+###
+
+POST http://localhost:3000/show/create
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3YWE4OWYwLWFiOTEtNGY2Yy04MWY1LWFlNjJlMTcwZTJlZSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTI1MzYyNzIsImV4cCI6MTY1MjU1NDI3Mn0.IH9VJJlrL2Tf0FL6Zq4HZtQ3tZkAaYfFAX9ci6XJAT4
+
+{
+    "week_day": "SEXTA", 
+    "start_time": "10", 
+    "end_time": "11", 
+    "band_id":"3d0d85b6-16f8-4965-bb4c-68b13bc40773"
+}
+
+###
+
+
+POST http://localhost:3000/ticket/create
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiY2M3MmJjLTI1NzQtNDdjNS1iMzBlLTljYjAyNWJiY2ExOCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjU2NTQzOSwiZXhwIjoxNjUyNTY4NDM5fQ.GwwRr-BnoE-U_C729T_DFfp9BNmACfXTF1taqpMfGNU
+{
+   "name": "jogo do flamengo", 
+   "value": , 
+   "idEvent": "1", 
+   "quantifyTicket":100
+}
