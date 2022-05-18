@@ -11,7 +11,9 @@ O LAMA, *Labenu Musical Awards*, é um festival com vários shows de bandas famo
 - Fazer login
 - Criar uma banda
 - Retornar uma banda por id
+- Retornar todas as bandas
 - Criar um show
+- Retornar todos os shows
 - Retornar todos os show de um dia
 - Criar um ingresso de um show
 - Comprar ingreso de um show
