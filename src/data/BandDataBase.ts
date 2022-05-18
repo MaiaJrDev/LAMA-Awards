@@ -25,4 +25,11 @@ export class BandUserData extends BaseDatabase implements IBandUserData {
       .where({ id });
     return resultBand[0];
   }
+
+  async getAllBands(): Promise<Band[]> {
+    const result = await this.getConnection()
+    .from(this.TABLE_NAME);
+
+    return result;
+  }
 }

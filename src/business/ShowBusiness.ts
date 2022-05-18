@@ -79,4 +79,19 @@ export class ShowBusiness {
     const getAllShow = await this.showData.getShowByDay(newDay);
     return getAllShow;
   };
+
+
+  getAllShow = async(token: string): Promise<Show[]> => {
+
+    this.authenticator.getData(token);
+
+    const shows = await this.showData.getAllShows();
+
+    if(shows.length === 0){
+      throw new Error("Nenhum show encontrado !")
+    }
+
+    return shows;
+
+  }
 }

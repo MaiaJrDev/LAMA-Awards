@@ -62,4 +62,20 @@ export class BandUserBussines {
 
     return bandById || band;
   };
+
+  getAllBands = async (token: string): Promise<Band[]> => {
+      if(!token){
+        throw new Error("É preciso passar um token de autenticação");
+      }
+
+      this.authenticator.getData(token);
+
+      const bands = await this.bandData.getAllBands();
+
+      if(bands.length === 0){
+        throw new Error("Nenhuma banda cadastrada !")
+      }
+
+      return bands;
+  } 
 }

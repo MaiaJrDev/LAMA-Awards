@@ -3,6 +3,7 @@ import { Show } from "../model/User";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class ShowDataBase extends BaseDatabase implements IShowData {
+
   private TABLE_SHOW = "lama_shows";
   private TABLE_BAND = "lama_band";
 
@@ -54,6 +55,15 @@ export class ShowDataBase extends BaseDatabase implements IShowData {
     const [result] = await this.getConnection()
       .from(this.TABLE_SHOW)
       .where({ id });
+
+    return result;
+  }
+
+  async getAllShows(): Promise<Show[]>{
+    
+    const result = await this.getConnection()
+    .from(this.TABLE_SHOW)
+    .join(`${this.TABLE_BAND}`, 'band_id', '=', 'lama_band.id');
 
     return result;
   }

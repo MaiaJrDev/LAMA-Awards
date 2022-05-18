@@ -52,4 +52,18 @@ export class BandController {
       }
     }
   };
+
+  getAllBands = async (req: Request, res: Response): Promise<void> => {
+    try{
+
+      const token = req.headers.authorization;
+
+      const bands = await this.bandUserBusiness.getAllBands(token);
+
+      res.status(200).send(bands)
+
+    }catch (error) {
+      res.status(500).send(error.message)
+    }
+  }
 }

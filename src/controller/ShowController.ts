@@ -52,4 +52,27 @@ export class ShowController {
       }
     }
   }
+
+
+  async getAllShow(req: Request, res: Response): Promise<void> {
+    try {
+      const token = req.headers.authorization;
+
+      const shows = await this.showBusiness.getAllShow(token);
+
+      res.status(200).send(shows);
+
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(400).send({ message: error.message });
+      } else if (error) {
+        res.status(400).send(error.sqlMessage);
+      } else {
+        res.status(500).send({ message: "Erro ao se conectar com o servidor" });
+      }
+    }
+
+    await BaseDatabase.destroyConnection();
+  }
+
 }

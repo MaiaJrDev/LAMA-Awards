@@ -10,4 +10,5 @@ export interface IShowData {
     end_time: number
   ): Promise<boolean>;
   verifyExistShow(id: string): Promise<boolean>;
+  getAllShows(): Promise<Show[]>;
 }

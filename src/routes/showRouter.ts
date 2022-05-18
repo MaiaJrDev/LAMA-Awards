@@ -15,4 +15,5 @@ const showBusiness = new ShowBusiness(authenticator, idGeneration, showData);
 const showController = new ShowController(showBusiness);
 
 showRouter.post("/create", (req, res) => showController.createShow(req, res));
+showRouter.get("/getAllShows", (req, res) => showController.getAllShow(req, res));
 showRouter.get("/:day", (req, res) => showController.getAllShowByday(req, res));
